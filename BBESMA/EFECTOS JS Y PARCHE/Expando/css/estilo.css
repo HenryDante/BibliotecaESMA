@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+#contenedor{
+border:#333333;
+float:none;
+margin-left:auto;
+margin-right:auto;
+width:1100px;
+}
+#menu
+{
+float:left;
+width:600px;
+}
+#mision_vision
+{
+background:#666666;
+float:left;
+width:500px;
+}
