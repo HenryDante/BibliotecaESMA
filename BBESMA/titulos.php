@@ -182,10 +182,38 @@ Prestar
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel"><?php echo "$tit"; ?></h4>
       </div>
       <div class="modal-body">
-        ...
+
+        <?php
+
+        $cons="select * from libros  WHERE codigo_libro = $id ";
+        $dir="biblioteca-virtual/administrador/";
+       $res_con= mysql_query($cons);
+       while($registro=mysql_fetch_array($res_con)){
+        $tit=$registro["titulo_libro"] ;
+        $des=   $registro["descriptor"] ;
+        $edi=   $registro["editorial"] ;
+        $autor=   $registro["autor"] ;
+        $imn1=$registro["img1"];
+        $imag=$dir.$imn1;
+
+  echo "
+ <img src=$imag width=200px height=250px />
+ <p>$des </p>
+   <p>Editorial: $edi </p>
+      <p>Autor: $autor</p>";
+    }
+?>
+<label>Nombre:&nbsp;<input type="text" name="nombre"/></label>
+      <label>Documento:&nbsp;<select id = "documento">
+                       <option> </option>
+                       <option value = "1">DUI</option>
+                       <option value = "2">Licencia de conducir</option>
+                       </select></label>
+      <label>Cantidad a prestar:&nbsp;<input type="text" name="cantidad" id="cantidad"/></label>
+    
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
