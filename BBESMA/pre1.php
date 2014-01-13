@@ -39,7 +39,6 @@
         $imn1=$registro["img1"];
         $imag=$dir.$imn1;
 
-
   echo "<div class=product_box>
 <h3  class=titlibro>$tit</h3>
  <div  style='float: left;'> <img src=$imag width=200px height=250px /></div>
